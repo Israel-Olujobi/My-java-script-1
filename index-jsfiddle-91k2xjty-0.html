@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+
+  <style>
+    body{
+    margin:10px;background-color:black
+}
+#home{
+    margin-top:-1;margin-left:-1;margin-right:-1;
+    padding-bottom:2cm;
+    background-color:#822EFF
+}
+header{
+    font-size:30px;
+    color:#CBC3E3;
+    float:left;
+    padding-left:2cm;
+}
+.topdiv{
+    float:right;
+    padding:1cm;
+}
+.topmenu{
+    color:lightgrey;
+    background: color#35063e;
+    margin:10px;
+    padding:10px;
+    border-radius:1mm;
+    font-size:20px;
+    text-decoration:wavy;
+}
+.topmenu:hover{
+    color:white;
+    font-weight:bolder;
+    background-color:purple;
+    text-decoration: double;
+}
+#allconversionsections{
+    justify-content:center;
+    display:grid;
+}
+figure{
+    float:left;
+    justify-self:auto;
+    width: 200px;
+}
+img{
+    width: 200px;
+}
+figcaption{
+    color:black;
+    font-size:17px;
+    text-align:center;
+}
+button{
+    font-size:20px;
+    border-radius:40px;
+    border:transparent;
+    width:fit-content;
+    background-color:lightgreen;
+    padding-left:15px;
+    padding-right:15px;
+}
+button:hover{
+    cursor:pointer;
+}
+.b{
+    border-top:solid;
+    border-top-width:20px;
+    border-radius:10px;
+    background-color:white;
+    width:600px;
+    height:400px;
+    margin-top:25px;
+    margin-bottom:25px;
+    display:flex;
+}
+.temperature{
+    border-top-color:green;
+}
+.weight{
+    border-top-color:coral;
+}
+.distance{
+    border-top-color:cyan;
+}
+legend{
+    font-size:30px;
+    font-weight:bolder;
+}
+.iconbutton{
+    width:40px;
+    height:40px;
+    justify-content:center;
+    align-items:center;
+    border-radius:100%;
+    background-color:cyan;
+    display:flex;
+    position:fixed;
+    bottom: 40px;
+    left:0;
+}
+.iconbutton img{
+    width:30px;
+}
+footer{
+    background-color:lightpink;
+    margin-top:20px;
+}
+  </style>
+
+  
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
+  </head>
+  <body>
+      <section id="home">
+        <header>
+          Unit Conversions
+        </header>
+        <nav>
+          <div class="topdiv">
+            <a href="#temperature"><button  class="topmenu">Temperature</button></a>
+            <a href="#weight"><button  class="topmenu">Weight</button></a>
+            <a href="#distance"><button  class="topmenu">Distance</button></a>
+          </div>
+        </nav>
+      </section>    
+      <div style="clear:both;"></div>
+     
+      <div id="all-conversion-sections">
+
+        <section id="temperature"  class="b temperature">
+          <div id="tmp">
+            <figure>
+              <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/thermo.png" width="150px"/>
+              <figcaption>Celcius to Farenheit Conversion</figcaption>
+            </figure>
+            <article> 
+
+              <fieldset>
+                <legend>Temperature</legend>
+                <label for="celsius">Celsius</label> <br/>
+                <input type="number" id="celsius"> <br/>
+
+                <button id="temperature" onclick="temperature()"> Convert </button> <br/>
+
+                <input type="number" id="fahrenheit"> <br/>
+                <label for="fahrenheit">Fahrenheit</label>
+              </fieldset>
+              <aside>
+                To convert celsius to fahrenheit yourself, use this formula replacing the `C` with your temperature in celsius: (C * 9/5) + 32
+              </aside>
+            </article>
+          </div>
+        </section>
+
+        <div style="clear:both;"></div>
+      
+        <section id="weight"  class="b weight">          
+          <div id="wgt">
+            <figure>
+              <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png"  width="150px"/>
+              <figcaption>Kilograms to Pound Conversion</figcaption>
+            </figure>
+            <article>
+              <fieldset>
+                <legend>Weight</legend>
+                <label for="kilo">KG</label> <br/>
+                <input type="number" id="kilo"> <br/>
+
+                <button id="weight" onclick="weight()"> Convert </button>  <br/>
+
+ 
+                <input type="number" id="pounds">  <br/>
+                <label for="pounds">Pounds</label>    
+              </fieldset>
+              <aside>
+                To convert kilograms to pounds yourself, use this formula replacing the `kg` with your weight in kilograms: kg x 2.205
+              </aside>      
+            </article>
+          </div>
+        </section>
+
+        <div style="clear:both;"></div>
+
+        <section id="distance"  class="b distance">
+          <div id="dst">
+            <figure>
+              <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png"  width="150px"/>
+              <figcaption>Kilometers to Miles Conversion</figcaption>
+            </figure>
+            <article>
+              <fieldset>
+                <legend>Distance</legend>
+                  <label for="km">KM</label> <br/>
+                  <input type="number" id="km">  <br/>
+
+                  <button id="distance" onclick="distance()"> Convert </button> <br/>
+
+                  <input type="number" id="miles">  <br/>
+                  <label for="miles">Miles</label>
+              </fieldset>
+              <aside>
+                To convert kilometers to miles yourself, use this formula replacing the `km` with your distance in kilmeters: km &divide; 1.609
+              </aside>
+    
+            </article>
+          </div>
+        </section>
+        <div style="clear:both;"></div>
+
+      </div>
+
+    <div id="go-home" class="iconbutton">
+      <a href="#home">
+        <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg"/>
+      </a>
+    </div>
+
+    <footer>Learn more about HTML and CSS as a part of IBM Fullstack Cloud Developer Certification</footer>
+  </body>
+</html>
+
+  <script>
+    function temperature(){
+    //To convert celsius to farenheit
+    //(CEL * 9/5) + 32
+    var c = document.getElementById("celsius").value;
+    var f= (c * 9/5) + 32
+    document.getElementById("fahrenheit").value=f;
+}
+
+function weight(){
+    //To convert Kgs to Pounds
+    //Weight (Kgs) * 2.2
+    var kg=document.getElementById("kilo").value;
+    var po=kg * 2.2
+    document.getElementById("pounds").value=po;
+}
+
+function distance(){
+    //To convert Kms to Miles
+    //Distance(Kms) * 0.62137
+    var k=document.getElementById("km").value;
+    var mi=k * 0.62137
+    document.getElementById("miles").value=mi;
+}
+  </script>
+</body>
+</html>
